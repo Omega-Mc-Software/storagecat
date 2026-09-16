@@ -6,10 +6,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>StorageCat</AssemblyName>
+    <AssemblyName>StoragePaw</AssemblyName>
     <RootNamespace>StorageCat</RootNamespace>
     <Version>0.1.3</Version>
-    <Product>StorageCat</Product>
+    <Product>StoragePaw</Product>
     <Authors>Neko Omega</Authors>
     <Description>Self-storage bookkeeping that stays small.</Description>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
