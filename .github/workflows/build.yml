@@ -30,7 +30,14 @@ jobs:
         id: sha
         shell: pwsh
         run: |
-          $exe = Get-ChildItem src/bin/Release/net8.0-windows/win-x64/publish/StorageCat.exe
+          $dir = "src/bin/Release/net8.0-windows/win-x64/publish"
+          $exes = @(Get-ChildItem -Path $dir -Filter *.exe -File -ErrorAction Stop)
+          if ($exes.Count -ne 1) {
+            Write-Error "Expected exactly 1 exe in $dir, found $($exes.Count): $($exes.Name -join ', ')"
+            exit 1
+          }
+          $exe = $exes[0]
+          Write-Host "Hashing $($exe.Name) ($($exe.Length) bytes)"
           $hash = (Get-FileHash $exe.FullName -Algorithm SHA256).Hash.ToLower()
           "hash=$hash" >> $env:GITHUB_OUTPUT
           "exe=$($exe.FullName)" >> $env:GITHUB_OUTPUT
