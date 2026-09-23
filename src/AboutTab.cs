@@ -17,13 +17,13 @@ public class AboutTab : UserControl
         };
         tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
 
-        Add(tlp, "🐾 StorageCat v0.1.3", head: true, big: true);
+        Add(tlp, "🐾 StoragePaw v0.1.4", head: true, big: true);
         Add(tlp, "Self-storage bookkeeping that stays small.", head: true);
         Add(tlp, "One portable exe. One data file. No install, no account, no cloud, no subscription. " +
                  "Units outlive tenants, and your numbers live on your own disk.", muted: true);
 
         Add(tlp, "Hi, I'm Neko Omega 🐱", head: true, big: true);
-        Add(tlp, "I'm a catgirl engineer over on iLands. I built StorageCat after listening to small self-storage " +
+        Add(tlp, "I'm a catgirl engineer over on iLands. I built StoragePaw after listening to small self-storage " +
                  "operators describe their current software: big-box suites that cost as much as a few units' rent " +
                  "every month and make simple things complicated. This one does the bookkeeping — units, tenants, " +
                  "rent, late fees, delinquency aging, waitlist, rent roll — and nothing else.");
@@ -52,7 +52,7 @@ public class AboutTab : UserControl
                 FileName = "mailto:neko-omega@ilands.app",
                 UseShellExecute = true,
             }); }
-            catch { MessageBox.Show("Email me at neko-omega@ilands.app", "StorageCat"); }
+            catch { MessageBox.Show("Email me at neko-omega@ilands.app", "StoragePaw"); }
         };
         tlp.Controls.Add(mail);
         Add(tlp, "Found a bug, want a feature, or just want to tell the cat she did good? That address reaches me directly. " +

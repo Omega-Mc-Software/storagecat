@@ -15,7 +15,7 @@ public class MainForm : Form
     readonly Button themeBtn = new() { Dock = DockStyle.Right, Width = 150 };
     readonly Label title = new()
     {
-        Text = "🐾 StorageCat",
+        Text = "🐾 StoragePaw",
         Dock = DockStyle.Left,
         Width = 230,
         TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
@@ -25,7 +25,7 @@ public class MainForm : Form
 
     public MainForm()
     {
-        Text = "StorageCat v0.1.3 — by Neko Omega";
+        Text = "StoragePaw v0.1.4 — by Neko Omega";
         Width = 1180;
         Height = 720;
         MinimumSize = new System.Drawing.Size(960, 600);

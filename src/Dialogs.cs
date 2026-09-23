@@ -99,20 +99,20 @@ public class UnitDialog : Form
     {
         if (string.IsNullOrWhiteSpace(nameT.Text))
         {
-            MessageBox.Show("The unit needs a name (e.g. 10x10-01).", "StorageCat",
+            MessageBox.Show("The unit needs a name (e.g. 10x10-01).", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         if (!Ui.ParseMoneyOrZero(rentT.Text, out var rent))
         {
-            MessageBox.Show("Rent should be an amount like 95 or 95.00.", "StorageCat",
+            MessageBox.Show("Rent should be an amount like 95 or 95.00.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         string moveIn = moveInT.Text.Trim();
         if (moveIn.Length > 0 && !Ui.ParseDate(moveIn, out _))
         {
-            MessageBox.Show("Move-in date should look like 2026-09-13, or stay empty.", "StorageCat",
+            MessageBox.Show("Move-in date should look like 2026-09-13, or stay empty.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
@@ -235,13 +235,13 @@ public class TxnDialog : Form
     {
         if (!Ui.ParseDate(dateT.Text, out var d))
         {
-            MessageBox.Show("Date should look like 2026-09-13.", "StorageCat",
+            MessageBox.Show("Date should look like 2026-09-13.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         if (!Ui.ParseMoney(amountT.Text, out var amount))
         {
-            MessageBox.Show("Amount must be a number greater than 0.", "StorageCat",
+            MessageBox.Show("Amount must be a number greater than 0.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
@@ -362,13 +362,13 @@ public class WaitDialog : Form
     {
         if (!Ui.ParseDate(dateT.Text, out var d))
         {
-            MessageBox.Show("Date should look like 2026-09-13.", "StorageCat",
+            MessageBox.Show("Date should look like 2026-09-13.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         if (string.IsNullOrWhiteSpace(nameT.Text))
         {
-            MessageBox.Show("A name (or at least a contact) is needed.", "StorageCat",
+            MessageBox.Show("A name (or at least a contact) is needed.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }

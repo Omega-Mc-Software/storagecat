@@ -331,7 +331,7 @@ public class UnitsTab : UserControl
         if (u == null) return;
         if (!u.Occupied)
         {
-            MessageBox.Show("That unit has no tenant to move out.", "StorageCat",
+            MessageBox.Show("That unit has no tenant to move out.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
@@ -921,21 +921,21 @@ public class SettingsTab : UserControl
     {
         if (!int.TryParse(graceT.Text.Trim(), out var grace) || grace < 0)
         {
-            MessageBox.Show("Grace period must be a number of days (0 or more).", "StorageCat",
+            MessageBox.Show("Grace period must be a number of days (0 or more).", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         decimal late = 0;
         if (lateT.Text.Trim().Length > 0 && !Ui.ParseMoney(lateT.Text, out late))
         {
-            MessageBox.Show("Late fee should be an amount like 25 or 25.00.", "StorageCat",
+            MessageBox.Show("Late fee should be an amount like 25 or 25.00.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         decimal holdAmt = 0;
         if (holdAmtT.Text.Trim().Length > 0 && !Ui.ParseMoney(holdAmtT.Text, out holdAmt))
         {
-            MessageBox.Show("Hold fee should be an amount like 50 or 50.00.", "StorageCat",
+            MessageBox.Show("Hold fee should be an amount like 50 or 50.00.", "StoragePaw",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
@@ -962,7 +962,7 @@ public class SettingsTab : UserControl
         Db.SaveSizes(sizes);
 
         SettingsChanged?.Invoke();
-        MessageBox.Show("Settings saved.", "StorageCat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        MessageBox.Show("Settings saved.", "StoragePaw", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     void GenerateUnits()

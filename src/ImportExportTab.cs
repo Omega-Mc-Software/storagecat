@@ -102,7 +102,7 @@ public class ImportExportTab : UserControl
                     UseShellExecute = true,
                 });
             }
-            catch { MessageBox.Show("Data folder: " + Db.DataDir, "StorageCat"); }
+            catch { MessageBox.Show("Data folder: " + Db.DataDir, "StoragePaw"); }
         }));
 
         Controls.Add(flow);
@@ -360,7 +360,7 @@ public class ImportExportTab : UserControl
     {
         using var dlg = new SaveFileDialog
         {
-            Filter = "StorageCat backup (JSON)|*.json",
+            Filter = "StoragePaw backup (JSON)|*.json",
             FileName = $"storagecat-backup-{DateTime.Today:yyyy-MM-dd}.json",
         };
         if (dlg.ShowDialog(FindForm()) != DialogResult.OK) return;
@@ -394,7 +394,7 @@ public class ImportExportTab : UserControl
 
     void ImportJson()
     {
-        using var dlg = new OpenFileDialog { Filter = "StorageCat backup (JSON)|*.json" };
+        using var dlg = new OpenFileDialog { Filter = "StoragePaw backup (JSON)|*.json" };
         if (dlg.ShowDialog(FindForm()) != DialogResult.OK) return;
 
         try
@@ -402,12 +402,12 @@ public class ImportExportTab : UserControl
             var backup = JsonSerializer.Deserialize<Backup>(File.ReadAllText(dlg.FileName), JsonOpts);
             if (backup == null)
             {
-                MessageBox.Show("That file doesn't look like a StorageCat backup.", "Restore",
+                MessageBox.Show("That file doesn't look like a StoragePaw backup.", "Restore",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (MessageBox.Show(
-                    "Restoring a backup REPLACES everything currently in StorageCat.\nContinue?",
+                    "Restoring a backup REPLACES everything currently in StoragePaw.\nContinue?",
                     "Restore backup", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 return;
 
